@@ -97,27 +97,37 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Map Placeholder */}
+          {/* Map */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:w-2/3 h-[400px] lg:h-auto rounded-3xl overflow-hidden shadow-lg border-4 border-cream"
+            className="lg:w-2/3 flex flex-col gap-4"
           >
-            {/* Using a static map image or iframe. Iframe is better for real maps, but we'll use a stylized placeholder image for aesthetic purposes, or an actual iframe if preferred. Let's use an iframe for realism. */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14513.62645607064!2d73.6821!3d24.6015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e56550a14411%3A0xdbd8c28455b868b0!2sSukhadia%20Circle%2C%20Udaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{
-                border: 0,
-                filter: "grayscale(0.3) contrast(1.1) opacity(0.9)",
-              }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <div className="w-full h-[350px] lg:h-full rounded-3xl overflow-hidden shadow-lg border-4 border-cream relative">
+              <iframe
+                src="https://maps.google.com/maps?q=The+Oven+Project+Cafe,+Udaipur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{
+                  border: 0,
+                  filter: "grayscale(0.3) contrast(1.1) opacity(0.9)",
+                }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/97o2Z1XBsL8Z5Yqk7"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-dark-brown text-cream px-8 py-4 rounded-2xl font-bold shadow-md hover:bg-terracotta hover:shadow-xl transition-all flex items-center justify-center gap-3 w-full"
+            >
+              <MapPin size={20} />
+              Open in Google Maps
+            </a>
           </motion.div>
         </div>
       </div>
