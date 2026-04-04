@@ -7,9 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-serif font-bold mb-6">
-              The Oven Project.
-            </h3>
+            <img src="/logo.png" alt="The Oven Project" className="h-16 w-auto object-contain mb-6" />
             <p className="text-cream/70 text-sm leading-relaxed mb-6">
               Udaipur’s most aesthetic and cozy café. Serving premium coffee,
               delicious comfort food, and unforgettable vibes.
@@ -85,7 +83,7 @@ export function Footer() {
               <li>Near Sukhadia Circle</li>
               <li>Udaipur, Rajasthan 313001</li>
               <li className="pt-2">+91 7568453340</li>
-              <li>hello@theovenproject.com</li>
+              <li>tanayskitchen@gmail.com</li>
             </ul>
           </div>
 

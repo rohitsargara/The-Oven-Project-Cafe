@@ -40,15 +40,10 @@ export function CTA() {
           className="flex flex-col sm:flex-row justify-center items-center gap-4"
         >
           <a
-            href="#contact"
+            href="https://wa.me/917568453340?text=Hi!%20I%20would%20like%20to%20order%20online."
+            target="_blank"
+            rel="noreferrer"
             className="w-full sm:w-auto bg-cream text-dark-brown px-8 py-4 rounded-full font-bold hover:bg-white hover:scale-105 transition-all flex items-center justify-center gap-2"
-          >
-            <Calendar size={20} />
-            Reserve a Table
-          </a>
-          <a
-            href="#"
-            className="w-full sm:w-auto bg-transparent border-2 border-cream text-cream px-8 py-4 rounded-full font-bold hover:bg-cream/10 transition-all flex items-center justify-center gap-2"
           >
             <ShoppingBag size={20} />
             Order Online

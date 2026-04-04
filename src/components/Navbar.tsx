@@ -37,9 +37,9 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <a
           href="#home"
-          className="text-2xl font-serif font-bold tracking-tight text-dark-brown"
+          className="flex items-center"
         >
-          The Oven Project.
+          <img src="/logo.png" alt="The Oven Project" className="h-12 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}
@@ -48,22 +48,30 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium hover:text-terracotta transition-colors"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled ? "text-dark-brown hover:text-terracotta" : "text-cream hover:text-terracotta"
+              }`}
             >
               {link.name}
             </a>
           ))}
           <a
-            href="#contact"
-            className="bg-dark-brown text-cream px-6 py-2.5 rounded-full text-sm font-medium hover:bg-terracotta transition-colors"
+            href="https://wa.me/917568453340?text=Hi!%20I%20would%20like%20to%20order%20online."
+            target="_blank"
+            rel="noreferrer"
+            className={`px-6 py-2.5 rounded-full text-sm font-medium transition-colors ${
+              isScrolled 
+                ? "bg-dark-brown text-cream hover:bg-terracotta" 
+                : "bg-cream text-dark-brown hover:bg-terracotta hover:text-cream"
+            }`}
           >
-            Reserve a Table
+            Order Online
           </a>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-dark-brown"
+          className={`md:hidden ${isScrolled ? "text-dark-brown" : "text-cream"}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -89,11 +97,13 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://wa.me/917568453340?text=Hi!%20I%20would%20like%20to%20order%20online."
+            target="_blank"
+            rel="noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
             className="bg-dark-brown text-cream px-6 py-3 rounded-full text-center font-medium mt-4"
           >
-            Reserve a Table
+            Order Online
           </a>
         </motion.div>
       )}
