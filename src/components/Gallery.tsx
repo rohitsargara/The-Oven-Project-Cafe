@@ -3,12 +3,12 @@ import { Instagram } from "lucide-react";
 
 export function Gallery() {
   const images = [
-    "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1975&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1974&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop", // Duplicate for masonry effect
+    { src: "/gallery/1.jpg", fallback: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop" },
+    { src: "/gallery/2.jpg", fallback: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1975&auto=format&fit=crop" },
+    { src: "/gallery/3.jpg", fallback: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" },
+    { src: "/gallery/4.jpg", fallback: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=2070&auto=format&fit=crop" },
+    { src: "/gallery/5.jpg", fallback: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1974&auto=format&fit=crop" },
+    { src: "/gallery/6.jpg", fallback: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop" },
   ];
 
   return (
@@ -38,7 +38,7 @@ export function Gallery() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            href="https://instagram.com"
+            href="https://www.instagram.com/the.oven.project?igsh=MTdmNjdqN3JpZHk5aQ=="
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 text-brown hover:text-terracotta transition-colors font-medium"
@@ -57,16 +57,21 @@ export function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className={`rounded-2xl overflow-hidden group ${
+              className={`rounded-2xl overflow-hidden group bg-sand/20 ${
                 idx === 0
                   ? "col-span-2 row-span-2 aspect-square md:aspect-auto"
                   : "aspect-square"
               }`}
             >
               <img
-                src={img}
+                src={img.src}
                 alt="Cafe Ambience"
+                onError={(e) => {
+                  e.currentTarget.src = img.fallback;
+                  e.currentTarget.onerror = null;
+                }}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
               />
             </motion.div>
           ))}

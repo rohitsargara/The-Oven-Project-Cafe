@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 
 export function Footer() {
   return (
@@ -14,22 +14,20 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/the.oven.project?igsh=MTdmNjdqN3JpZHk5aQ=="
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-terracotta transition-colors"
               >
                 <Instagram size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/share/1DtNPuCDba/"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-terracotta transition-colors"
               >
                 <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-terracotta transition-colors"
-              >
-                <Twitter size={18} />
               </a>
             </div>
           </div>
